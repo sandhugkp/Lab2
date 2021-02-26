@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Lab2Master.master.cs" Inherits="Lab2.Lab2Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+<%--Jason DiLoreta & Daniel Giglio--%>
+
+<%-- Link to CSS Stylesheet for Easier Formatting (stylesheet.css) --%>
+<link href="stylesheet.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <%--Separate div with unique ID for CSS formatting--%>
+            <div id="mainDiv">
+                <%-- Logo and Title for all Pages --%>
+                <asp:Image ID="imgLogo" runat="server" ImageUrl="/images/mlogo.jpg" Width="206.25px" Height="150px"/>
+                <br />
+                <asp:Label ID="lblApplicationHeader" runat="server" Text="Midland Moving & Auction Services" Font-Bold="true" Font-Size="XX-Large"></asp:Label>
+                <br />
+                 <%-- Label to show who is logged in (if anyone is) --%>
+                <asp:Label ID="lblCurrentUser" runat="server" Text="" Font-Size="Large"></asp:Label> 
+            </div>
+            <div id="navDiv">
+                <asp:Menu ID="navMenu" runat="server">
+                    <Items>
+                        <asp:MenuItem Text="Customer Registration" NavigateUrl="CustomerRegistration.aspx"></asp:MenuItem>
+                    </Items>
+                    <Items>
+                        <asp:MenuItem Text="Service Registration" NavigateUrl="ServiceRegistration.aspx"></asp:MenuItem>
+                    </Items>
+                    <Items>
+                        <asp:MenuItem Text="View Service Ticket" NavigateUrl="ViewServiceTicket.aspx"></asp:MenuItem>
+                    </Items>
+                    <Items>
+                        <asp:MenuItem Text="Edit Service Ticket" NavigateUrl="EditServiceTicket.aspx"></asp:MenuItem>
+                    </Items>
+                    <Items>
+                        <asp:MenuItem Text="Login / Logout Page" NavigateUrl="LandingHomePage.aspx"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+            <%-- ContentPlaceHolder for Content/Sub-Pages --%>
+            <asp:ContentPlaceHolder ID="cph1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
